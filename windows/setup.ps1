@@ -39,3 +39,9 @@ winget install BurntSushi.ripgrep.MSVC
 winget install Neovim.Neovim
 
 git clone https://github.com/8bitbass/config.nvim.git "${env:XDG_CONFIG_HOME}\nvim"
+
+# install DotNet versions
+winget install Microsoft.DotNet.SDK.9
+winget install Microsoft.DotNet.SDK.8
+winget install Microsoft.DotNet.SDK.7
+
