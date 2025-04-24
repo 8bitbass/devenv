@@ -2,12 +2,14 @@
 [System.IO.Directory]::CreateDirectory("C:\.local")
 [System.IO.Directory]::CreateDirectory("C:\.local\share")
 [System.IO.Directory]::CreateDirectory("C:\.local\state")
+[System.IO.Directory]::CreateDirectory("C:\Home")
 
 winget install microsoft.powershell
 
 winget install --id Microsoft.WindowsTerminal -e
 
 winget install --id Git.Git -e --source winget
+Write-Host "Remember to run git config --global user.name and git config --global user.email" -ForegroundColor DarkGreen -BackgroundColor White
 
 function Set-EnvVar {
     param (
@@ -25,6 +27,7 @@ function Set-EnvVar {
 Set-EnvVar -Name "XDG_CONFIG_HOME" -Value "C:/.config"
 Set-EnvVar -Name "XDG_DATA_HOME" -Value "C:/.local/share"
 Set-EnvVar -Name "XDG_STATE_HOME" -Value "C:/.local/state"
+Set-EnvVar -Name "HOME" -Value "C:/Home"
 
 # install chocolatey because getting zig through winget is broken for 0.14.0
 # winget install --id chocolatey.chocolatey --source winget
